@@ -1,0 +1,35 @@
+---
+// Bloc « features » — grille de cartes de fonctionnalités.
+// Styles globaux (.features, .section-title, .grid, .card…) définis dans src/pages/index.astro.
+interface Item {
+	icon?: string;
+	title: string;
+	body: string;
+}
+interface Props {
+	heading: string;
+	lead?: string;
+	items: Item[];
+}
+const { heading, lead, items } = Astro.props;
+---
+
+<section id="features" class="features">
+	<h2 class="section-title">{heading}</h2>
+	{lead && <p class="section-lead">{lead}</p>}
+	<div class="grid">
+		{
+			items.map((f) => (
+				<article class="card">
+					{f.icon && (
+						<div class="card-icon" aria-hidden="true">
+							{f.icon}
+						</div>
+					)}
+					<h3>{f.title}</h3>
+					<p>{f.body}</p>
+				</article>
+			))
+		}
+	</div>
+</section>

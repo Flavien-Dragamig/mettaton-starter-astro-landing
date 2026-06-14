@@ -1,0 +1,65 @@
+{
+  "seo": {
+    "title": "Mettaton Starter — Astro Landing",
+    "description": "Un starter de landing page marketing prêt à l'emploi, construit avec Astro. Hero, features, CTA et footer inclus."
+  },
+  "header": {
+    "brand": "Mettaton",
+    "nav": [
+      { "label": "Fonctionnalités", "href": "#features" },
+      { "label": "Commencer", "href": "#cta" }
+    ]
+  },
+  "blocks": [
+    {
+      "_template": "hero",
+      "eyebrow": "Starter Astro · Landing Page",
+      "heading": "Lancez votre page d'atterrissage en quelques minutes",
+      "subtitle": "Un modèle de landing page moderne, rapide et accessible. Personnalisez le contenu, déployez, et concentrez-vous sur ce qui compte : votre produit.",
+      "actions": [
+        { "label": "Démarrer maintenant", "href": "#cta", "variant": "primary" },
+        { "label": "Découvrir", "href": "#features", "variant": "ghost" }
+      ]
+    },
+    {
+      "_template": "features",
+      "heading": "Pourquoi ce starter ?",
+      "lead": "Tout ce qu'il faut pour une landing page performante, rien de superflu.",
+      "items": [
+        {
+          "icon": "⚡",
+          "title": "Ultra rapide",
+          "body": "Zéro JavaScript par défaut. Astro livre du HTML statique pour des pages qui se chargent instantanément."
+        },
+        {
+          "icon": "🧩",
+          "title": "Composable",
+          "body": "Assemblez votre stack avec des composants Astro, React, Vue ou Svelte selon vos besoins."
+        },
+        {
+          "icon": "🚀",
+          "title": "Prêt à déployer",
+          "body": "Build optimisé en une commande, déployable sur n'importe quel hébergeur statique ou edge."
+        }
+      ]
+    },
+    {
+      "_template": "cta",
+      "heading": "Prêt à construire votre prochaine landing ?",
+      "body": "Clonez ce starter, adaptez le contenu et publiez en un clin d'œil.",
+      "action": {
+        "label": "Construire avec Astro",
+        "href": "https://astro.build",
+        "external": true
+      }
+    }
+  ],
+  "footer": {
+    "text": "Mettaton Starter. Construit avec Astro.",
+    "nav": [
+      { "label": "Fonctionnalités", "href": "#features" },
+      { "label": "Commencer", "href": "#cta" },
+      { "label": "Astro", "href": "https://astro.build", "external": true }
+    ]
+  }
+}
