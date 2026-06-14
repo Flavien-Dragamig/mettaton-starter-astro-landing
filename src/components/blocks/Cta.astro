@@ -1,0 +1,33 @@
+---
+// Bloc « cta » — appel à l'action final.
+// Styles globaux (.cta, .cta-inner, .btn…) définis dans src/pages/index.astro.
+interface Action {
+	label: string;
+	href: string;
+	external?: boolean;
+}
+interface Props {
+	heading: string;
+	body?: string;
+	action?: Action;
+}
+const { heading, body, action } = Astro.props;
+---
+
+<section id="cta" class="cta">
+	<div class="cta-inner">
+		<h2>{heading}</h2>
+		{body && <p>{body}</p>}
+		{
+			action && (
+				<a
+					class="btn btn-primary btn-lg"
+					href={action.href}
+					{...(action.external ? { target: '_blank', rel: 'noopener' } : {})}
+				>
+					{action.label}
+				</a>
+			)
+		}
+	</div>
+</section>

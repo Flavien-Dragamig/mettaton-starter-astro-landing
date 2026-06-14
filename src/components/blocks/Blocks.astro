@@ -1,0 +1,33 @@
+---
+// Dispatcher de blocs — itère sur la liste `blocks` du contenu et rend le composant
+// correspondant au `_template` de chaque bloc. Pour ajouter un type de bloc :
+//   1. ajouter le schéma dans src/content.config.ts (et son miroir dans tina/config.ts) ;
+//   2. créer le composant ici et l'enregistrer dans `componentsByTemplate`.
+import Hero from './Hero.astro';
+import Features from './Features.astro';
+import Cta from './Cta.astro';
+
+const componentsByTemplate: Record<string, any> = {
+	hero: Hero,
+	features: Features,
+	cta: Cta,
+};
+
+interface Block {
+	_template: string;
+	[key: string]: unknown;
+}
+interface Props {
+	blocks: Block[];
+}
+const { blocks } = Astro.props;
+---
+
+{
+	blocks.map((block) => {
+		const Component = componentsByTemplate[block._template];
+		if (!Component) return null;
+		const { _template, ...props } = block;
+		return <Component {...props} />;
+	})
+}
