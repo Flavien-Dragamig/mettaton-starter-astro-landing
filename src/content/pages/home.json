@@ -1,7 +1,7 @@
 {
   "seo": {
     "title": "Mettaton Starter — Astro Landing",
-    "description": "Un starter de landing page marketing prêt à l'emploi, construit avec Astro. Hero, features, CTA et footer inclus."
+    "description": "Un starter de landing page marketing prêt à l'emploi, construit avec Astro. Accroche, points forts, appel à l'action et pied de page inclus."
   },
   "header": {
     "brand": "Mettaton",
@@ -14,7 +14,7 @@
     {
       "_template": "hero",
       "eyebrow": "Starter Astro · Landing Page",
-      "heading": "Lancez votre page d'atterrissage en quelques minutes",
+      "heading": "Mettez votre landing page en ligne en quelques minutes",
       "subtitle": "Un modèle de landing page moderne, rapide et accessible. Personnalisez le contenu, déployez, et concentrez-vous sur ce qui compte : votre produit.",
       "actions": [
         { "label": "Démarrer maintenant", "href": "#cta", "variant": "primary" },
