@@ -1,0 +1,35 @@
+---
+// Bloc « hero » — section d'accroche de la landing.
+// Styles globaux (.hero, .eyebrow, .subtitle, .btn…) définis dans src/pages/index.astro.
+interface Action {
+	label: string;
+	href: string;
+	variant?: 'primary' | 'ghost';
+}
+interface Props {
+	eyebrow?: string;
+	heading: string;
+	subtitle?: string;
+	actions?: Action[];
+}
+const { eyebrow, heading, subtitle, actions = [] } = Astro.props;
+---
+
+<section class="hero">
+	<div class="hero-inner">
+		{eyebrow && <span class="eyebrow">{eyebrow}</span>}
+		<h1>{heading}</h1>
+		{subtitle && <p class="subtitle">{subtitle}</p>}
+		{
+			actions.length > 0 && (
+				<div class="hero-actions">
+					{actions.map((a) => (
+						<a class={`btn ${a.variant === 'ghost' ? 'btn-ghost' : 'btn-primary'}`} href={a.href}>
+							{a.label}
+						</a>
+					))}
+				</div>
+			)
+		}
+	</div>
+</section>
